@@ -601,3 +601,28 @@ a {
 .address:hover {
   transition: 200ms;
 }
+
+/* MODAL */
+
+.modal-title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.44rem;
+  letter-spacing: 0.03em;
+  margin: 40px 0 12px 0;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 0.875rem;
+  letter-spacing: 0.01em;
+  color: var(--brand-grey);
+}
+
+.form-window {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+}
