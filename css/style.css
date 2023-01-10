@@ -285,7 +285,6 @@ a {
 
 .is-hidden {
   opacity: 0;
-  /* visibility: hidden; */
   pointer-events: none;
   transform: scale(0);
 }
@@ -577,8 +576,6 @@ a {
   fill: var(--brand-black);
 }
 
-/* .newsletter-button:focus ~ .send-svg */
-
 /* END FOOTER DESCRIPTION */
 
 /* SVG */
@@ -796,16 +793,11 @@ a {
   transform: translateX(50%);
   transform: scale(0);
   transition: 200ms;
-  /* opacity: 0; */
 }
 
 .policy input:checked {
   border-color: rgb(255, 255, 255);
 }
-
-/* .policy input[type="checkbox"]:checked ~ .check-icon {
-  opacity: 1;
-} */
 
 .policy:has(input:checked) .check-icon {
   transform: scale(1);
@@ -824,17 +816,6 @@ a {
   fill: var(--brand-blue);
 }
 
-/* IKONY SVG NIE DZIAŁAJĄ MI Z FOCUS, PONIŻEJ TO CO PRUBOWAŁEM ALE BEZ SKUTKU,
-JAK KOMBINOWAŁEM Z LABEL TEZ NIC NIE DAWAŁO... */
-
-/* .input-text-box:focus + .modal-icons {
+.input-text-box:focus + .modal-icons {
   fill: var(--brand-blue);
 }
-
-.input-text-box:has(:focus) ~ .modal-icons {
-  fill: var(--brand-blue);
-}
-
-.modal-icons:focus {
-  fill: var(--brand-blue);
-} */
