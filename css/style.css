@@ -506,7 +506,7 @@ a {
 }
 
 .box-2 {
-  width: 300px;
+  width: 206px;
   margin-top: 12px;
   margin-bottom: 40px;
 }
@@ -569,10 +569,12 @@ a {
   color: rgb(255, 255, 255);
 }
 
-.newsletter-button:hover + .send-svg {
-  fill: black;
-  stroke: black;
-  stroke-width: 2px;
+.send-svg {
+  fill: white;
+}
+
+.newsletter-button:hover .send-svg {
+  fill: var(--brand-black);
 }
 
 /* .newsletter-button:focus ~ .send-svg */
@@ -740,20 +742,9 @@ a {
 }
 
 .policy-checkbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   gap: 8px;
   margin-bottom: 30px;
-}
-
-.check-icon {
-  position: absolute;
-  left: 15px;
-  transform: translateX(50%);
-  transform: scale(0);
-  transition: 200ms;
 }
 
 .policy {
@@ -762,6 +753,9 @@ a {
   line-height: 1.5rem;
   letter-spacing: 0.03em;
   color: #757575;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-links {
@@ -787,29 +781,60 @@ a {
   justify-content: center;
 }
 
-.policy-checkbox input {
+.policy input {
   appearance: none;
   width: 16px;
   height: 15px;
   border: 2px solid black;
   border-radius: 4px;
+  margin-right: 7px;
 }
 
-.policy-checkbox input:checked ~ .check-icon {
-  transform: scale(1);
+.check-icon {
+  position: absolute;
+  left: 18px;
+  transform: translateX(50%);
+  transform: scale(0);
+  transition: 200ms;
+  /* opacity: 0; */
 }
 
-.policy-checkbox input:checked {
+.policy input:checked {
   border-color: rgb(255, 255, 255);
+}
+
+/* .policy input[type="checkbox"]:checked ~ .check-icon {
+  opacity: 1;
+} */
+
+.policy:has(input:checked) .check-icon {
+  transform: scale(1);
 }
 
 .input-text-box:hover,
 .input-text-box:focus,
 .newsletter-input:focus,
-.newsletter-input:hover {
+.newsletter-input:hover,
+.feedback:hover,
+.feedback:focus {
   border-color: var(--brand-blue);
 }
 
 .input-text-box:hover + .modal-icons {
   fill: var(--brand-blue);
 }
+
+/* IKONY SVG NIE DZIAŁAJĄ MI Z FOCUS, PONIŻEJ TO CO PRUBOWAŁEM ALE BEZ SKUTKU,
+JAK KOMBINOWAŁEM Z LABEL TEZ NIC NIE DAWAŁO... */
+
+/* .input-text-box:focus + .modal-icons {
+  fill: var(--brand-blue);
+}
+
+.input-text-box:has(:focus) ~ .modal-icons {
+  fill: var(--brand-blue);
+}
+
+.modal-icons:focus {
+  fill: var(--brand-blue);
+} */
